@@ -26,8 +26,6 @@ workflows:
   my_workflow:
     jobs:
       - build
-          requires:
-            - deploy
       - test:
           requires:
             - build
