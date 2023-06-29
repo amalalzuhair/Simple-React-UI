@@ -1,15 +1,6 @@
 version: 2.1
 
 jobs:
-  deploy:
-    docker:
-      - image: circleci/node:13.8.0
-    steps:
-      - checkout
-      - run: npm i
-      - run: npm predeploy
-      - run: npm deploy
-      - run: npm start
   build:
     docker:
       - image: circleci/node:13.8.0
@@ -34,8 +25,7 @@ jobs:
 workflows:
   my_workflow:
     jobs:
-      - deploy
-      - build:
+      - build
           requires:
             - deploy
       - test:
