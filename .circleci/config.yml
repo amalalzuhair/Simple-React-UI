@@ -15,6 +15,7 @@ jobs:
       - checkout
       - run: npm i
       - run: npm audit
+      - run: npm audit fix
 
 workflows:
   my_workflow:
